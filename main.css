@@ -1,0 +1,230 @@
+body {
+    background-color: #151d28 !important;
+}
+
+#avatar {
+  border-radius: 100%;
+}
+
+#gametitle {
+    color: white;
+    font-size: 30px;
+}
+
+#generatecode {
+    cursor: pointer;
+}
+
+.footer {
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.footer-larger {
+    font-size: 25px; 
+    font-weight: bold;
+    color: #fff;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: #F4A52E;
+}
+a:hover, a:active {
+    color: #F4A52E !important;
+}
+
+#title {
+    padding-top: 20px;
+}
+
+
+.appadd {
+    margin-bottom: 100px;
+}
+
+#name {
+    padding-top: 10px;
+}
+
+header.masthead {
+    padding-top: 0 !important;    
+    background: #151d28 !important;
+    padding-bottom: 2rem !important;
+}
+
+section {
+    background: #151d28 !important;
+}
+
+button {
+    margin-top: 0 !important;
+}
+
+#vods {
+    color: #fff;  
+}
+
+#bio {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+#app {
+    position:relative;
+    text-align:center;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    font-family: "Century Gothic";
+    border-radius: 25px;
+    margin-top: -25px;
+    color: #fff;
+    padding-top: 0;
+    background-size: cover !important;
+}
+
+.layer {
+    border-radius: 25px;
+    padding: 50px;
+}
+
+#viewers::before{
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+#embed {
+    border: 0; 
+    width: 91%;
+    height: 500px;
+    border-radius: 25px;
+}
+
+#feedback {
+    color: #F4A52E;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+
+.titles {
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    padding-top: 25px;
+}
+
+.padd {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 100%;
+}
+
+.container { 
+    padding-top: 50px;
+}
+
+.viewers-cont {
+    padding-top: 25px;
+}
+
+#viewers {
+    color:#282828;
+    font-size: 20px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    padding:5px;
+    border-radius:20px;
+    font-family: 'Century Gothic';
+    font-weight:bolder;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 7px;
+}
+
+
+
+#sub {
+    font-weight: bold;
+    font-family: "Century Gothic";
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.partner {
+    width: auto;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#code {
+    border-radius: 25px;
+    background: #282828;
+    color: #fff;
+    border: none;
+    scrollbar-arrow-color:pink; 
+    scrollbar-base-color:red; 
+    scrollbar-darkshadow-color:blue; 
+    scrollbar-highlight-color:orange; 
+    scrollbar-shadow-color:green
+}
+
+.status {
+    padding-left: 20px;
+}
+
+.followers {
+    border-radius: 25px;
+    font-size: 25px;
+    margin-left: 7px;
+}
+
+#audience {
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-left: 7px;
+}
+
+#status {
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.uname {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    color: #fff;
+    -webkit-appearance: textfield;
+    background-color: #282828;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    border-radius: 25px;
+    font: 400 13.3333px Arial;
+    /* padding: 1px 0px; */
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+}
