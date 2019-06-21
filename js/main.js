@@ -86,11 +86,9 @@ $(document).ready(function() {
             " has been generated below. Check it out!"
         )
         .css({ "font-size": "25px" });
-        $("#generatecode").text("Generate Code");
-          $("#codetitle").html("Generated Profile Code for " + name);
-          $("#alphanote").html("This feature is in alpha and doesn't fully work yet!</p>");
-          
-          $("#code").load("./cheese.html").css({display: "unset"});
+          $("#codetitle").html("Generate Profile for " + name);
+          $("#alphanote").css({display: "unset"});
+          $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
     });
   });
 });

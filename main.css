@@ -174,7 +174,9 @@ button {
     scrollbar-base-color:red; 
     scrollbar-darkshadow-color:blue; 
     scrollbar-highlight-color:orange; 
-    scrollbar-shadow-color:green
+    scrollbar-shadow-color:green;
+    width: 100%;
+    overflow: hidden;
 }
 
 .status {
@@ -198,6 +200,10 @@ button {
     border-radius: 25px;
     padding: 5px 10px;
     font-size: 20px;
+}
+
+#alphanote {
+    display: none;
 }
 
 .uname {
