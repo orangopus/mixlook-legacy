@@ -1,1 +1,27 @@
-# Mixer-Channel-Lookup
+![](https://lookup.cheesesquadron.live/img/logo.png)
+
+Mixer Channel Lookup is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can download and embed to your site.
+
+##Features
+- Lookup profiles and watch livestreams
+- Generate a website using the Profile Generator.
+- More features to come!
+
+##Recent Updates
+- You can now press the enter key to search! No more having to play Cookie Clicker with the search button!
+- Description panels have now been added!
+
+
+##Bug fixes
+- Fixed bug that caused profiles with no game set to not load.
+
+##Roadmap
+- Plans to add automagic widget generation. So no need to download the manual profile generator.
+- Plans to add social buttons.
+- Any other suggestions? Let me know!
+
+##Bugs & Suggestions
+
+Any bugs to report or suggestions? File them over on our GitHub Repo: 
+https://github.com/CheesePwn/Mixer-Channel-Lookup/issues
+
