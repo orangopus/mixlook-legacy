@@ -74,6 +74,10 @@ button {
     margin-top: 0 !important;
 }
 
+#butt {
+    display: none;
+}
+
 #vods {
     color: #fff;  
 }

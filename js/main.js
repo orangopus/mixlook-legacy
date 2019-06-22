@@ -1,17 +1,22 @@
 $(document).ready(function() {
   $("#code").css({ display: "none"});
-  $('#uname').keypress(function(e){
-    if(e.which == 13){
+  $("#embed").css({display: "none"});
+  $('#uname').keyup(function(e){
+    if(e.which){
         $('#butt').click();
     }
   });
+  
   $("#butt").click(function() {
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
+    $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
+    setInterval(function(){  
     $.get(url, function(result) {
+      var name = result.token;
+      $("#pagetitle").text(name + " on Mixer");
       $("#app").css({ background: "#282828" });
       var online = result.online;
-      var name = result.token;
       var avatarUrl = result.user.avatarUrl;
       var viewers = result.viewersCurrent;
       var bio = result.user.bio;
@@ -63,7 +68,6 @@ $(document).ready(function() {
         $("#embedshow").css({ display: "unset" });
         $("#gametitle").text("Currently playing " + gameTitle);
         $("#avatar").css({ border: "5px solid green" });
-        $("#embed").attr("src", "https://mixer.com/embed/player/" + name);
         $("#status")
           .html(title)
           .css({ background: "green", color: "#fff" });
@@ -84,7 +88,6 @@ $(document).ready(function() {
 
       $("#avatar").attr("src", avatarUrl);
       $("#favicon").attr("href", avatarUrl);
-      $("#pagetitle").text(name + " on Mixer");
       $("#generated")
         .text(
           "Golly gumdrops! Your requested profile for " +
@@ -96,5 +99,6 @@ $(document).ready(function() {
           $("#alphanote").css({display: "unset"});
           $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
     });
+    }, 500);
   });
 });
