@@ -12,8 +12,13 @@ $(document).ready(function() {
     url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
      var desc = result.description;
+     if (desc === null) {
+       desc = "No description detected.";
+     }
      var name = result.token;
+     $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
      $("#pagetitle").text(name + " on Mixer");
+     $("#about").text("About "+name)
      $("#desc").html(desc);
     });
     $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
@@ -72,8 +77,22 @@ $(document).ready(function() {
             .css({ background: "green", color: "#fff" });
         }
         $("#embedshow").css({ display: "unset" });
-        $("#gametitle").text("Currently playing " + gameTitle);
         $("#avatar").css({ border: "5px solid green" });
+        if (gameTitle === "Programming") {
+          $("#gametitle").text("Programming 👨‍💻");
+        } 
+        else if (gameTitle === "Music") {
+          $("#gametitle").text("Playing Music 🎶");
+        }   
+        else if (gameTitle === "Web Show") {
+          $("#gametitle").text("Hosting a Web Show 📺");
+        }  
+        else if (gameTitle === "Creative") {
+          $("#gametitle").text("Being Creative 🎨");
+        }
+        else {
+          $("#gametitle").text("Currently playing " + gameTitle );       
+        }
         $("#status")
           .html(title)
           .css({ background: "green", color: "#fff" });
@@ -103,7 +122,6 @@ $(document).ready(function() {
         .css({ "font-size": "25px" });
           $("#codetitle").html("Generate Profile for " + name);
           $("#alphanote").css({display: "unset"});
-          $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
     });
     }, 1000);
   });
