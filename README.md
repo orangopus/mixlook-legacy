@@ -2,6 +2,8 @@
 
 Mixer Channel Lookup is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can download and embed to your site.
 
+[Try it here](https://lookup.cheesesquadron.live)
+
 ## Features
 - Lookup profiles and watch livestreams
 - Generate a website using the Profile Generator.
