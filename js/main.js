@@ -8,7 +8,6 @@ $(document).ready(function() {
       var online = result.online;
       var name = result.token;
       var avatarUrl = result.user.avatarUrl;
-      var background = result.type.backgroundUrl;
       var viewers = result.viewersCurrent;
       var bio = result.user.bio;
       var channelid = result.id;
@@ -16,12 +15,12 @@ $(document).ready(function() {
       var followers = new Intl.NumberFormat().format(result.numFollowers);
       vodurl = "https://mixer.com/api/v1/channels/" + channelid + "/recordings";
       $("#bio").text(bio);
-      if (result.type === null) {
+      if (result.type === null ) {
         gameTitle = " nothing...";
       } else {
         var gameTitle = result.type.name;
+        $("#app").css("background-image", "url(" + result.type.backgroundUrl + ")");
       }
-      $("#app").css("background-image", "url(" + background + ")");
       var partner = result.partnered;
       if (partner === true) {
         $("#name").html(
