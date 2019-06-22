@@ -10,6 +10,10 @@ $(document).ready(function() {
   $("#butt").click(function() {
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
+    $.get(url, function(result) {
+      var desc = result.description;
+     $("#desc").html(desc);
+    });
     $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
     setInterval(function(){  
     $.get(url, function(result) {
@@ -34,8 +38,6 @@ $(document).ready(function() {
         var gameTitle = result.type.name;
         $("#app").css("background-image", "url(" + result.type.backgroundUrl + ")");
       }
-      var desc = result.description;
-      $("#desc").html(desc);
       var partner = result.partnered;
       if (partner === true) {
         $("#name").html(
@@ -102,6 +104,6 @@ $(document).ready(function() {
           $("#alphanote").css({display: "unset"});
           $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
     });
-    }, 500);
+    }, 1000);
   });
 });
