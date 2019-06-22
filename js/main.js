@@ -11,14 +11,15 @@ $(document).ready(function() {
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
-      var desc = result.description;
+     var desc = result.description;
+     var name = result.token;
+     $("#pagetitle").text(name + " on Mixer");
      $("#desc").html(desc);
     });
     $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
     setInterval(function(){  
     $.get(url, function(result) {
       var name = result.token;
-      $("#pagetitle").text(name + " on Mixer");
       $("#app").css({ background: "#282828" });
       var online = result.online;
       var avatarUrl = result.user.avatarUrl;
