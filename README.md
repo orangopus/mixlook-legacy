@@ -2,7 +2,7 @@
 
 Mixer Channel Lookup is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can download and embed to your site.
 
-[Try it here](https://lookup.cheesesquadron.live)
+[Try it here](https://mixlook.cheesesquadron.live)
 
 ## Features
 - Lookup profiles and watch livestreams
@@ -28,5 +28,5 @@ Mixer Channel Lookup is a tool to look up channels on Mixer and displays them in
 ## Bugs & Suggestions
 
 Any bugs to report or suggestions? File them over on our GitHub Repo: 
-https://github.com/CheesePwn/Mixer-Channel-Lookup/issues
+https://github.com/CheesePwn/Mixlook/issues
 
