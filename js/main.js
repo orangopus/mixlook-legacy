@@ -1,5 +1,10 @@
 $(document).ready(function() {
   $("#code").css({ display: "none"});
+  $('#uname').keypress(function(e){
+    if(e.which == 13){
+        $('#butt').click();
+    }
+  });
   $("#butt").click(function() {
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
@@ -21,6 +26,8 @@ $(document).ready(function() {
         var gameTitle = result.type.name;
         $("#app").css("background-image", "url(" + result.type.backgroundUrl + ")");
       }
+      var desc = result.description;
+      $("#desc").html(desc);
       var partner = result.partnered;
       if (partner === true) {
         $("#name").html(

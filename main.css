@@ -6,6 +6,18 @@ body {
   border-radius: 100%;
 }
 
+#desc img {
+    max-width: 100% !important;
+}
+
+#desc p {
+    margin: 0 !important;
+}
+
+#desc {
+    color: white;
+}
+
 #gametitle {
     color: white;
     font-size: 30px;
