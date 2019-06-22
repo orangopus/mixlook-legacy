@@ -11,6 +11,8 @@ Mixer Channel Lookup is a tool to look up channels on Mixer and displays them in
 - ~You can now press the enter key to search! No more having to play Cookie Clicker with the search button!~
 - Auto-generation when looking for username. No need to break your enter key!
 - Description panels have now been added!
+- Certain games will show different strrings.
+- About section has been styled better.
 
 ## Bug fixes
 - Fixed bug that caused profiles with no game set to not load.
