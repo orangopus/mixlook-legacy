@@ -18,6 +18,9 @@ $(document).ready(function() {
       $("#app").css({ background: "#282828" });
       var online = result.online;
       var avatarUrl = result.user.avatarUrl;
+      if (avatarUrl === null) {
+        avatarUrl = "https://mixer.com/_latest/assets/images/main/avatars/default.png";
+      }
       var viewers = result.viewersCurrent;
       var bio = result.user.bio;
       var channelid = result.id;
