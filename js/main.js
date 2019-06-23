@@ -3,11 +3,14 @@ $(document).ready(function() {
   $("#embed").css({display: "none"});
   $('#uname').keyup(function(e){
     if(e.which){
-        $('#butt').click();
+        $('#butt').click();   
+        $("#header").css({"margin-top": "0"});   
+        $("#footer").css({ display: "unset", "padding-bottom": "20px;"}); 
     }
   });
   
   $("#butt").click(function() {
+    $("#scrollbar").css({ "overflow-y" : "scroll"});
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {

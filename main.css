@@ -2,6 +2,10 @@ body {
     background-color: #151d28 !important;
 }
 
+#scrollbar {
+    overflow: hidden;
+}
+
 #avatar {
   border-radius: 100%;
 }
@@ -64,6 +68,10 @@ a:hover, a:active {
     padding-top: 20px;
 }
 
+#footer {
+    display: none;
+}
+
 
 .appadd {
     margin-bottom: 100px;
@@ -71,6 +79,10 @@ a:hover, a:active {
 
 #name {
     padding-top: 10px;
+}
+
+#header {
+    margin-top: 35vh;
 }
 
 header.masthead {
