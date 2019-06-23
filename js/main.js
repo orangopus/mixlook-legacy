@@ -19,7 +19,7 @@ $(document).ready(function() {
      $("#code").html("// CHANGE USERNAME TO WHAT YOU LIKE // \n var username = '"+name+"' ").css({display: "unset" });
      $("#pagetitle").text(name + " on Mixer");
      $("#about").text("About "+name)
-     $("#desc").html(desc);
+     $("#desc").html(desc + "<p style='visibility: hidden;'>.</p>");
     });
     $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
     setInterval(function(){  
