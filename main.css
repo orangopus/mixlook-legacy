@@ -250,6 +250,10 @@ button {
     display: none;
 }
 
+.uname:focus {
+    outline: none;
+}
+
 .uname {
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;

@@ -1,12 +1,12 @@
 $(document).ready(function() {
   $("#code").css({ display: "none"});
   $("#embed").css({display: "none"});
-  $("#header").addClass("header"); 
+  $("#header").addClass("header animated fadeInDown"); 
   $('#uname').on("keyup", function(e){
     if(e.which){
         $('#butt').click();
-        $("#profile").css({visibility: "visible"});   
-        $("#header").removeClass("header");    
+        $("#profile").css({visibility: "visible"});
+        $("#header").removeClass("header");   
         $("#footer").css({ display: "unset", "padding-bottom": "20px;"}); 
         $("#scrollbar").css({ "overflow-y" : "scroll"});
         $("#generated").addClass("small");
@@ -15,11 +15,15 @@ $(document).ready(function() {
           $("#profile").css({visibility: "hidden"});
           $("#generated").text("It's like magic. ✨ No signup required!");
           $("#generated").removeClass("small"); 
-          $("#header").addClass("header");
+          $("#header").removeClass("animated slideInUp");
+          $("#header").addClass("header animated slideInDown");
           $("#scrollbar").css({ "overflow" : "hidden"});
+          $("#pagetitle").text("Mixlook");
+          $("#favicon").attr("href", "https://mixer.com/_latest/assets/favicons/favicon-16x16.png");
         }
   });
   $("#butt").click(function() {
+    $("#profile").addClass("animated fadeIn");
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
