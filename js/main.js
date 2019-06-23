@@ -36,6 +36,15 @@ $(document).ready(function() {
      $("#pagetitle").text(name + " on Mixer");
      $("#about").text("About "+name)
      $("#desc").html(desc + "<p style='visibility: hidden;'>.</p>");
+     var twitter = result.user.social.twitter;
+     console.log(twitter)
+     if (twitter === undefined) {
+       $("#twitter-timeline").hide();
+     }
+     else {
+       twitter = "<a class='twitter-timeline' data-height='400' data-dnt='true' data-theme='dark' data-link-color='#FAB81E' href='https://twitter.com/"+twitter+"'></a><script async src='https://platform.twitter.com/widgets.js' charset='utf-8'></script>";
+       $("#twitter-timeline").html(twitter).show();
+    }
     });
     $("#embed").attr("src", "https://mixer.com/embed/player/" + username).css({display: "unset"});
     setInterval(function(){  

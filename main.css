@@ -88,6 +88,21 @@ a:hover, a:active {
     margin-top: 25vh !important;
 }
 
+#twitter-timeline {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.twitter {
+    background: #1da1f3;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.twitter-timeline {
+    border-radius: 25px !important;
+}
+
 header.masthead {
     padding-top: 0 !important;    
     background: #151d28 !important;
