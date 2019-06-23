@@ -10,6 +10,10 @@ body {
   border-radius: 100%;
 }
 
+.small {
+    font-size: 25px !important;
+}
+
 #desc img {
     max-width: 100% !important;
 }
@@ -72,7 +76,6 @@ a:hover, a:active {
     display: none;
 }
 
-
 .appadd {
     margin-bottom: 100px;
 }
@@ -81,8 +84,8 @@ a:hover, a:active {
     padding-top: 10px;
 }
 
-#header {
-    margin-top: 35vh;
+.header {
+    margin-top: 25vh !important;
 }
 
 header.masthead {

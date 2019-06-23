@@ -1,16 +1,25 @@
 $(document).ready(function() {
   $("#code").css({ display: "none"});
   $("#embed").css({display: "none"});
-  $('#uname').keyup(function(e){
+  $("#header").addClass("header"); 
+  $('#uname').on("keyup", function(e){
     if(e.which){
-        $('#butt').click();   
-        $("#header").css({"margin-top": "0"});   
+        $('#butt').click();
+        $("#profile").css({visibility: "visible"});   
+        $("#header").removeClass("header");    
         $("#footer").css({ display: "unset", "padding-bottom": "20px;"}); 
+        $("#scrollbar").css({ "overflow-y" : "scroll"});
+        $("#generated").addClass("small");
     }
+      if($("#uname").val() === ""){
+          $("#profile").css({visibility: "hidden"});
+          $("#generated").text("It's like magic. ✨ No signup required!");
+          $("#generated").removeClass("small"); 
+          $("#header").addClass("header");
+          $("#scrollbar").css({ "overflow" : "hidden"});
+        }
   });
-  
   $("#butt").click(function() {
-    $("#scrollbar").css({ "overflow-y" : "scroll"});
     var username = $("#uname").val();
     url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
@@ -122,7 +131,7 @@ $(document).ready(function() {
             name +
             " has been generated below. Check it out!"
         )
-        .css({ "font-size": "25px" });
+        .addClass("small");
           $("#codetitle").html("Generate Profile for " + name);
           $("#alphanote").css({display: "unset"});
     });
