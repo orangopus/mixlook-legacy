@@ -1,13 +1,37 @@
+
+
 function getWidget () {
   grabUser();  
-  $("#mixlook").load('http://localhost:5500/generated.html');
+  $("#mixlook").load('https://mixlook.cheesesquadron.live/generated.html');
   $("#body").html("<div id='mixlook'></div>")
   $("#scrollbar").css({ "overflow-y": "scroll" }); 
 }
 
+var url_string = window.location.href;
+var url = new URL(url_string);
+var c = url.searchParams.get("profile");
+console.log(c);
+username = c;
+
+function linkSearch(){
+  $(document).ready(function() {
+  $("#scrollbar").css({ "overflow-y": "scroll" }); 
+  $("#uname").remove();
+  $("#header").removeClass("header");
+  $("#generated").remove();
+  $("#widget").remove()
+  $("#user").text(username)
+  grabUser();
+  });
+}
+
 $(document).ready(function() {
+  $("#uname").add();
+  $("#header").addClass("header animated slideInDown");
   $("#embed").css({ display: "none" });
-  $("#header").addClass("header animated fadeInDown");
+  if (username = c) {
+    linkSearch();
+  }
   $("#uname").on("keyup", function(e) {
     if (e.which) {
       username = $("#uname").val();
