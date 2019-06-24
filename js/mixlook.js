@@ -1,16 +1,11 @@
 
 
-function getWidget () {
-  grabUser();  
-  $("#mixlook").load('https://mixlook.ml/generated.html');
-  $("#body").html("<div id='mixlook'></div>")
-  $("#scrollbar").css({ "overflow-y": "scroll" }); 
-}
-
 var url_string = window.location.href;
 var url = new URL(url_string);
 var c = url.searchParams.get("profile");
-console.log(c);
+var emb = url.searchParams.get("embed");
+
+console.log("Username: " + c + " | Embed: " +emb);
 username = c;
 
 function linkSearch(){
@@ -25,12 +20,24 @@ function linkSearch(){
   });
 }
 
+function embeds() {
+  $(document).ready(function() {
+  $('head').append('<link rel="stylesheet" type="text/css" href="embed.css">');
+  console.log("Embed is turned on.");
+  }); 
+}
+
+
 $(document).ready(function() {
   $("#uname").add();
+  $("#widgetbutts").hide();
   $("#header").addClass("header animated slideInDown");
   $("#embed").css({ display: "none" });
   if (username = c) {
     linkSearch();
+  }
+  if (emb === "true"){
+    embeds();
   }
   $("#uname").on("keyup", function(e) {
     if (e.which) {
@@ -175,9 +182,16 @@ $(document).ready(function() {
             .html("offline")
             .css({ background: "grey", color: "#fff" });
         }
-        $("#code").text("<div id='mixlook'></div>\n<script src='https://mixlook.cheesesquadron.live/js/mixlook.js' crossorigin='anonymous'></script>\n<script>username='"+name+"';getWidget()</script>")
+        $("#widgetbutts").show();
+        $("#code").text('<div><iframe width="560" height="349" src="https://mixlook.ml?profile='+name+'&embed=true" frameborder="0" allowfullscreen></iframe></div>')
         $("#avatar").attr("src", avatarUrl);
         $("#favicon").attr("href", avatarUrl);
+        $("#viewb").attr("href", "/?profile="+name+"&embed=true");
+        $("#clipb").click(function(){
+          $("textarea").select();
+          document.execCommand('copy');
+          $("#clipb").text("Copied to clipboard!")
+        });
         $("#generated")
           .text(
             "Golly gumdrops! Your requested profile for " +
