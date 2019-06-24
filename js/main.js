@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   $("#uname").on("keyup", function(e) {
     if (e.which) {
-      $("#butt").click();
       $("#profile").css({ visibility: "visible" });
       $("#header").removeClass("header");
       $("#footer").css({ display: "unset", "padding-bottom": "20px;" });
