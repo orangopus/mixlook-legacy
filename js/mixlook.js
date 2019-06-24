@@ -2,7 +2,7 @@
 
 function getWidget () {
   grabUser();  
-  $("#mixlook").load('https://mixlook.cheesesquadron.live/generated.html');
+  $("#mixlook").load('https://mixlook.ml/generated.html');
   $("#body").html("<div id='mixlook'></div>")
   $("#scrollbar").css({ "overflow-y": "scroll" }); 
 }
