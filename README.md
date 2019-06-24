@@ -1,4 +1,4 @@
-Mixlook is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can download and embed to your site.
+![](https://i.imgur.com/zj4ZV2Y.png)
 
 [Try it here](https://mixlook.cheesesquadron.live)
 
