@@ -1,16 +1,24 @@
+
+function getWidget () {
+  $("#scrollbar").css({ "overflow-y": "scroll" }); 
+  $("#profile").addClass("padd"); 
+  $("body").load('http://127.0.0.1:5500/generated.html')
+  grabUser();
+}
+
 $(document).ready(function() {
   $("#code").css({ display: "none" });
   $("#embed").css({ display: "none" });
   $("#header").addClass("header animated fadeInDown");
-
   $("#uname").on("keyup", function(e) {
     if (e.which) {
+      username = $("#uname").val();
+      grabUser();
       $("#profile").css({ visibility: "visible" });
       $("#header").removeClass("header");
       $("#footer").css({ display: "unset", "padding-bottom": "20px;" });
       $("#scrollbar").css({ "overflow-y": "scroll" });
       $("#generated").addClass("small");
-      grabUser();
     }
     if ($("#uname").val() === "") {
       $("#profile").css({ visibility: "hidden" });
@@ -26,11 +34,11 @@ $(document).ready(function() {
       );
     }
   });
+});
 
   function grabUser() {
-    $("#profile").addClass("animated fadeIn");
-    var username = $("#uname").val();
-    url = "https://mixer.com/api/v1/channels/" + username;
+    $(document).ready(function() {
+    var url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
       var desc = result.description;
       if (desc === null) {
@@ -48,7 +56,6 @@ $(document).ready(function() {
       $("#about").text("About " + name);
       $("#desc").html(desc + "<p style='visibility: hidden;'>.</p>");
       var twitter = result.user.social.twitter;
-      console.log(twitter);
       if (twitter === undefined) {
         $("#twitter-timeline").hide();
       } else {
@@ -64,7 +71,7 @@ $(document).ready(function() {
     $("#embed")
       .attr("src", "https://mixer.com/embed/player/" + username)
       .css({ display: "unset" });
-    setInterval(function() {
+      setTimeout(function() {
       $.get(url, function(result) {
         var name = result.token;
         $("#app").css({ background: "#282828" });
@@ -166,6 +173,6 @@ $(document).ready(function() {
         $("#codetitle").html("Generate Profile for " + name);
         $("#alphanote").css({ display: "unset" });
       });
-    }, 1000);
+     }, 1500);
+    });
   }
-});
