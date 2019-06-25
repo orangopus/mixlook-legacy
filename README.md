@@ -1,4 +1,4 @@
-Mixlook is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can download and embed to your site.
+Mixlook is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can view and embed to your site.
 
 [Try it here](https://mixlook.ml)
 
@@ -7,8 +7,10 @@ Mixlook is a tool to look up channels on Mixer and displays them in a beautifull
 - Embedded profiles!
 - More features to come!
 
+## Changelog
+[View the changelog](https://headwayapp.co/mixlook-changelog)
+
 ## Recent Updates
-- ~You can now press the enter key to search! No more having to play Cookie Clicker with the search button!~
 - Auto-generation when looking for username. No need to break your enter key!
 - Description panels have now been added!
 - Certain games will show different strrings.
