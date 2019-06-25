@@ -1,20 +1,28 @@
-Mixlook is a tool to look up channels on Mixer and displays them in a beautifully laid out profile that you can view and embed to your site.
+
+
+<img src="https://i.imgur.com/YToAhwK.png">
 
 [Try it here](https://mixlook.ml)
 
 ## Features
-- Lookup profiles and watch livestreams!
-- Embedded profiles!
-- More features to come!
+
+### Search Profiles
+Auto-generation when looking for username. No need to break your enter key!
+
+### Profile Links
+Direct profile links to your favourite Mixer streamers!
+
+<img src="https://cloud.headwayapp.co/changelogs_images/images/big/000/031/513-edb4ce3b9dc6f44423a1a94102a66d8b00836a05.png" width="50%">
+
+### Enbed your profile
+Sleek and smart dynamic embeds for your website!
+
+<img src="https://cloud.headwayapp.co/changelogs_images/images/big/000/031/535-50ae620295637c741f5c354bf33e2cf93a124edc.gif" width="50%">
 
 ## Changelog
 [View the changelog](https://headwayapp.co/mixlook-changelog)
 
 ## Recent Updates
-- Auto-generation when looking for username. No need to break your enter key!
-- Description panels have now been added!
-- Certain games will show different strrings.
-- About section has been styled better.
 - Embedded profiles are now live!
 - New url parameters to hide/show certain things.
 
