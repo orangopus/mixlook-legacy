@@ -25,6 +25,7 @@ function embeds() {
   $('head').append('<link rel="stylesheet" type="text/css" href="embed.css">');
   console.log("Embed is turned on.");
   $("#scrollbar").css({ overflow: "hidden" });
+  $("#widget").hide();
   }); 
 }
 
