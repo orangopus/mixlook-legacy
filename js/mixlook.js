@@ -198,7 +198,7 @@ $(document).ready(function() {
         $("#code").text('<iframe src="https://mixlook.ml?profile='+name+'&embed=show" frameborder="0" allowfullscreen></iframe>')
         $("#avatar").attr("src", avatarUrl);
         $("#favicon").attr("href", avatarUrl);
-        $("#viewb").attr("href", "/?profile="+name+"&embed=true");
+        $("#viewb").attr("href", "/?profile="+name+"&embed=show");
         $("#clipb").click(function(){
           $("textarea").select();
           document.execCommand('copy');
