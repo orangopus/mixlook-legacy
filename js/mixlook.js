@@ -4,6 +4,7 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var c = url.searchParams.get("profile");
 var emb = url.searchParams.get("embed");
+var player = url.searchParams.get("player");
 
 console.log("Username: " + c + " | Embed: " +emb);
 username = c;
@@ -14,7 +15,6 @@ function linkSearch(){
   $("#uname").remove();
   $("#header").removeClass("header");
   $("#generated").remove();
-  $("#widget").remove()
   $("#user").text(username)
   grabUser();
   });
@@ -28,6 +28,13 @@ function embeds() {
   }); 
 }
 
+function disablePlayer() {
+  $(document).ready(function() {
+  $("#embedshow").remove();
+  console.log("Player is disabled");
+  }); 
+}
+
 
 $(document).ready(function() {
   $("#uname").add();
@@ -37,8 +44,11 @@ $(document).ready(function() {
   if (username = c) {
     linkSearch();
   }
-  if (emb === "true"){
+  if (emb === "show"){
     embeds();
+  }
+  if (player === "hide"){
+    disablePlayer();
   }
   $("#uname").on("keyup", function(e) {
     if (e.which) {
@@ -184,7 +194,7 @@ $(document).ready(function() {
             .css({ background: "grey", color: "#fff" });
         }
         $("#widgetbutts").show();
-        $("#code").text('<div><iframe width="560" height="349" src="https://mixlook.ml?profile='+name+'&embed=true" frameborder="0" allowfullscreen></iframe></div>')
+        $("#code").text('<iframe src="https://mixlook.ml?profile='+name+'&embed=show" frameborder="0" allowfullscreen></iframe>')
         $("#avatar").attr("src", avatarUrl);
         $("#favicon").attr("href", avatarUrl);
         $("#viewb").attr("href", "/?profile="+name+"&embed=true");

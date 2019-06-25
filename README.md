@@ -3,8 +3,8 @@ Mixlook is a tool to look up channels on Mixer and displays them in a beautifull
 [Try it here](https://mixlook.ml)
 
 ## Features
-- Lookup profiles and watch livestreams
-- Generate a website using the Profile Generator.
+- Lookup profiles and watch livestreams!
+- Embedded profiles!
 - More features to come!
 
 ## Recent Updates
@@ -13,13 +13,10 @@ Mixlook is a tool to look up channels on Mixer and displays them in a beautifull
 - Description panels have now been added!
 - Certain games will show different strrings.
 - About section has been styled better.
-
-## Bug fixes
-- Fixed bug that caused profiles with no game set to not load.
-- Fixed avatar generation when user had a default blueberry avatar.
+- Embedded profiles are now live!
+- New url parameters to hide certain things.
 
 ## Roadmap
-- Plans to add automagic widget generation. So no need to download the manual profile generator.
 - Plans to add social buttons.
 - Any other suggestions? Let me know!
 
