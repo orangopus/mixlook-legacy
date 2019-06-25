@@ -25,5 +25,4 @@ Mixlook is a tool to look up channels on Mixer and displays them in a beautifull
 ## Bugs & Suggestions
 
 Any bugs to report or suggestions? File them over on our GitHub Repo: 
-https://github.com/CheesePwn/Mixlook/issues
-
+[Submit an Issue](https://github.com/Mixlook/Mixlook/issues)
