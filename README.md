@@ -16,7 +16,7 @@ Mixlook is a tool to look up channels on Mixer and displays them in a beautifull
 - Certain games will show different strrings.
 - About section has been styled better.
 - Embedded profiles are now live!
-- New url parameters to hide certain things.
+- New url parameters to hide/show certain things.
 
 ## Roadmap
 - Plans to add social buttons.
