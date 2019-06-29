@@ -30,4 +30,4 @@ Sleek and smart dynamic embeds for your website!
 
 ## Bugs & Suggestions
 
-Any bugs to report or suggestions? [Submit an Suggestion/Bug on our Issue Tracker](https://github.com/Mixlook/Mixlook/issues)
+Any bugs to report or suggestions? [Submit an Suggestion/Bug on our Issue Tracker](https://github.com/orangopus/Mixlook/issues)
