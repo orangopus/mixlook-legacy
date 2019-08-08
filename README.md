@@ -18,7 +18,7 @@ Sleek and smart dynamic embeds for your website!
 <img src="https://cloud.headwayapp.co/changelogs_images/images/big/000/031/535-50ae620295637c741f5c354bf33e2cf93a124edc.gif" width="50%">
 
 ## Changelog
-[View the changelog](https://headwayapp.co/mixlook-changelog)
+[View the changelog](https://feedback.orangop.us/changelog?labels=mixlook)
 
 ## Recent Updates
 - Embedded profiles are now live!
