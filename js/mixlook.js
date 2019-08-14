@@ -94,7 +94,7 @@ $(document).ready(function() {
         $("#twitter-timeline").hide();
       } else {
         twitter =
-          "<a class='twitter-timeline' data-height='400' data-dnt='true' data-theme='dark' data-link-color='#FAB81E' href='https://twitter.com/" +
+          "<a class='twitter-timeline' data-height='1000' data-dnt='true' data-theme='dark' data-link-color='#FAB81E' href='https://twitter.com/" +
           twitter +
           "'></a><script async src='https://platform.twitter.com/widgets.js' charset='utf-8'></script>";
         $("#twitter-timeline")
