@@ -81,7 +81,9 @@ a:hover, a:active {
 }
 
 #name {
-    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin: 0;
 }
 
 .header {
@@ -210,6 +212,7 @@ a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 7px;
+    white-space: nowrap;
 }
 
 
@@ -228,6 +231,24 @@ a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
     margin-left: 10px;
 }
 
+#level, #sparks, #xp, #age {
+    border-radius: 20px;
+    background: rgba(0,0,0, 0.3);
+    line-height: 65px;
+    padding: 10px 15px;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.groups { 
+    color: #fff;
+}
+
+.sparks {
+    color: #00bcf2;
+}
+
 #code {
     border-radius: 25px;
     background: #282828;
@@ -244,12 +265,14 @@ a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
 
 .status {
     padding-left: 20px;
+    white-space: nowrap;
 }
 
 .followers {
     border-radius: 25px;
     font-size: 25px;
     margin-left: 7px;
+    color: #fff;
 }
 
 #audience {
@@ -257,6 +280,7 @@ a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
     padding: 5px 10px;
     font-size: 20px;
     margin-left: 7px;
+    white-space: nowrap;
 }
 
 #status {
