@@ -40,6 +40,7 @@ function disablePlayer() {
 $(document).ready(function() {
   $("#uname").add();
   $("#widgetbutts").hide();
+  $("#stats").hide();
   $("#header").addClass("header animated slideInDown");
   $("#embed").css({ display: "none" });
   if (username = c) {
@@ -79,6 +80,7 @@ $(document).ready(function() {
 
   function grabUser() {
     $(document).ready(function() {
+      $("#stats").show();
     var url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
       var desc = result.description;
@@ -111,6 +113,61 @@ $(document).ready(function() {
         $("#app").css({ background: "#282828" });
         var online = result.online;
         var avatarUrl = result.user.avatarUrl;
+
+        var date = new Date(result.createdAt);
+        var day = date.getDate() + 1;
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        if (month === 1) {
+          month = "Jan"
+        }
+        if (month === 2) {
+          month = "Feb"
+        }
+        if (month === 3) {
+          month = "Mar"
+        }
+        if (month === 4) {
+          month = "Apr"
+        }
+        if (month === 5) {
+          month = "May"
+        }
+        if (month === 6) {
+          month = "Jun"
+        }
+        if (month === 7) {
+          month = "Jul"
+        }
+        if (month === 8) {
+          month = "Aug"
+        }
+        if (month === 9) {
+          month = "Sep"
+        }
+        if (month === 10) {
+          month = "Oct"
+        }
+        if (month === 11) {
+          month = "Nov"
+        }
+        if (month === 12) {
+          month = "Dec"
+        }
+
+        $("#age").text("📆 " + day + " " + month + ", " + year);
+
+
+       var xp = new Intl.NumberFormat().format(result.user.experience);
+       $("#xp").text("✨ " + xp + " XP");
+
+       var level = result.user.level;
+       $("#level").text("⚔️ LVL " + level);
+
+       var sparks = new Intl.NumberFormat().format(result.user.sparks);
+       $("#sparks").html("<i class='fa fas fa-bolt sparks'></i> " + sparks);
+
         if (avatarUrl === null) {
           avatarUrl =
             "https://mixer.com/_latest/assets/images/main/avatars/default.png";
@@ -123,6 +180,7 @@ $(document).ready(function() {
         vodurl =
           "https://mixer.com/api/v1/channels/" + channelid + "/recordings";
         $("#bio").text(bio);
+
         if (result.type === null) {
           gameTitle = " nothing...";
         } else {
@@ -142,9 +200,10 @@ $(document).ready(function() {
           );
         } else {
           $("#name").html(
-            name + " <span class='followers'>" + followers + " followers</span>"
+            name + "</span> <span class='followers'>" + followers + " followers</span>"
           );
         }
+
         $(".layer").css({ "background-color": "rgba(40,40,40, 0.8)" });
         if (online === true) {
           online = "is online";
@@ -170,6 +229,8 @@ $(document).ready(function() {
             $("#gametitle").text("Programming 👨‍💻");
           } else if (gameTitle === "Music") {
             $("#gametitle").text("Playing Music 🎶");
+          } else if (gameTitle === "Development") {
+              $("#gametitle").text("Developing 👨‍💻");
           } else if (gameTitle === "Web Show") {
             $("#gametitle").text("Hosting a Web Show 📺");
           } else if (gameTitle === "Creative") {
