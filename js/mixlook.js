@@ -115,7 +115,7 @@ $(document).ready(function() {
         var avatarUrl = result.user.avatarUrl;
 
         var date = new Date(result.createdAt);
-        var day = date.getDate() + 1;
+        var day = date.getDate();
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
 
