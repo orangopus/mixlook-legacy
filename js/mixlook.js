@@ -1,41 +1,81 @@
+function gup(name, url) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regexS = "[\\#&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(url);
+  return results == null ? null : results[1];
+}
 
-
+var username = false;
 var url_string = window.location.href;
 var url = new URL(url_string);
-var c = url.searchParams.get("profile");
+var c = url.searchParams.get("profile") || false;
+
+username = c;
+
+var token = gup("access_token");
+console.log(token);
+if (!c) {
+  if (localStorage.token && !token) {
+    token = localStorage.token;
+  }
+  if (token) {
+    localStorage.token = token;
+    $.ajax({
+      url: "https://mixer.com/api/v1/users/current",
+      headers: { Authorization: `Bearer ${token}` },
+      success: data => {
+        username = data.channel.token;
+        grabUser();
+        $("#login").hide();
+        $("#logout").show();
+        $("#logout").on("click", () => {
+          localStorage.token = null;
+          username = null;
+          $("#profile").hide();
+          $("#stats").hide();
+          $("#login").show();
+          $("#logout").hide();
+        });
+      }
+    });
+  }
+}
+
 var emb = url.searchParams.get("embed");
 var player = url.searchParams.get("player");
 
-console.log("Username: " + c + " | Embed: " +emb);
-username = c;
+console.log("Username: " + c + " | Embed: " + emb);
 
-function linkSearch(){
+function linkSearch() {
   $(document).ready(function() {
-  $("#scrollbar").css({ "overflow-y": "scroll" }); 
-  $("#uname").remove();
-  $("#header").removeClass("header");
-  $("#generated").remove();
-  $("#user").text(username)
-  grabUser();
+    $("#scrollbar").css({ "overflow-y": "scroll" });
+    $("#uname").remove();
+    $("#header").removeClass("header");
+    $("#generated").remove();
+    $("#user").text(username);
+    grabUser();
   });
 }
 
 function embeds() {
   $(document).ready(function() {
-  $('head').append('<link rel="stylesheet" type="text/css" href="embed.css">');
-  console.log("Embed is turned on.");
-  $("#scrollbar").css({ overflow: "hidden" });
-  $("#widget").hide();
-  }); 
+    $("head").append(
+      '<link rel="stylesheet" type="text/css" href="embed.css">'
+    );
+    console.log("Embed is turned on.");
+    $("#scrollbar").css({ overflow: "hidden" });
+    $("#widget").hide();
+  });
 }
 
 function disablePlayer() {
   $(document).ready(function() {
-  $("#embedshow").remove();
-  console.log("Player is disabled");
-  }); 
+    $("#embedshow").remove();
+    console.log("Player is disabled");
+  });
 }
-
 
 $(document).ready(function() {
   $("#uname").add();
@@ -43,44 +83,21 @@ $(document).ready(function() {
   $("#stats").hide();
   $("#header").addClass("header animated slideInDown");
   $("#embed").css({ display: "none" });
-  if (username = c) {
+  if (username) {
     linkSearch();
   }
-  if (emb === "show"){
+  if (emb === "show") {
     embeds();
   }
-  if (player === "hide"){
+  if (player === "hide") {
     disablePlayer();
   }
-  $("#uname").on("keyup", function(e) {
-    if (e.which) {
-      username = $("#uname").val();
-      grabUser();
-      $("#profile").css({ visibility: "visible" });
-      $("#header").removeClass("header");
-      $("#footer").css({ display: "unset", "padding-bottom": "20px;" });
-      $("#scrollbar").css({ "overflow-y": "scroll" });
-      $("#generated").addClass("small");
-    }
-    if ($("#uname").val() === "") {
-      $("#profile").css({ visibility: "hidden" });
-      $("#generated").removeClass("small");
-      $("#generated").text("It's like magic. ✨ No signup required!");
-      $("#header").removeClass("animated slideInUp");
-      $("#header").addClass("header animated slideInDown");
-      $("#scrollbar").css({ overflow: "hidden" });
-      $("#pagetitle").text("Mixlook");
-      $("#favicon").attr(
-        "href",
-        "https://mixer.com/_latest/assets/favicons/favicon-16x16.png"
-      );
-    }
-  });
 });
 
-  function grabUser() {
-    $(document).ready(function() {
-      $("#stats").show();
+function grabUser() {
+  $(document).ready(function() {
+    $("#profile").show();
+    $("#stats").show();
     var url = "https://mixer.com/api/v1/channels/" + username;
     $.get(url, function(result) {
       var desc = result.description;
@@ -107,7 +124,7 @@ $(document).ready(function() {
     $("#embed")
       .attr("src", "https://mixer.com/embed/player/" + username)
       .css({ display: "unset" });
-      setTimeout(function() {
+    setTimeout(function() {
       $.get(url, function(result) {
         var name = result.token;
         $("#app").css({ background: "#282828" });
@@ -120,53 +137,52 @@ $(document).ready(function() {
         var year = date.getFullYear();
 
         if (month === 1) {
-          month = "Jan"
+          month = "Jan";
         }
         if (month === 2) {
-          month = "Feb"
+          month = "Feb";
         }
         if (month === 3) {
-          month = "Mar"
+          month = "Mar";
         }
         if (month === 4) {
-          month = "Apr"
+          month = "Apr";
         }
         if (month === 5) {
-          month = "May"
+          month = "May";
         }
         if (month === 6) {
-          month = "Jun"
+          month = "Jun";
         }
         if (month === 7) {
-          month = "Jul"
+          month = "Jul";
         }
         if (month === 8) {
-          month = "Aug"
+          month = "Aug";
         }
         if (month === 9) {
-          month = "Sep"
+          month = "Sep";
         }
         if (month === 10) {
-          month = "Oct"
+          month = "Oct";
         }
         if (month === 11) {
-          month = "Nov"
+          month = "Nov";
         }
         if (month === 12) {
-          month = "Dec"
+          month = "Dec";
         }
 
         $("#age").text("📆 " + day + " " + month + ", " + year);
 
+        var xp = new Intl.NumberFormat().format(result.user.experience);
+        $("#xp").text("✨ " + xp + " XP");
 
-       var xp = new Intl.NumberFormat().format(result.user.experience);
-       $("#xp").text("✨ " + xp + " XP");
+        var level = result.user.level;
+        $("#level").text("⚔️ LVL " + level);
 
-       var level = result.user.level;
-       $("#level").text("⚔️ LVL " + level);
-
-       var sparks = new Intl.NumberFormat().format(result.user.sparks);
-       $("#sparks").html("<i class='fa fas fa-bolt sparks'></i> " + sparks);
+        var sparks = new Intl.NumberFormat().format(result.user.sparks);
+        $("#sparks").html("<i class='fa fas fa-bolt sparks'></i> " + sparks);
 
         if (avatarUrl === null) {
           avatarUrl =
@@ -200,7 +216,10 @@ $(document).ready(function() {
           );
         } else {
           $("#name").html(
-            name + "</span> <span class='followers'>" + followers + " followers</span>"
+            name +
+              "</span> <span class='followers'>" +
+              followers +
+              " followers</span>"
           );
         }
 
@@ -230,7 +249,7 @@ $(document).ready(function() {
           } else if (gameTitle === "Music") {
             $("#gametitle").text("Playing Music 🎶");
           } else if (gameTitle === "Development") {
-              $("#gametitle").text("Developing 👨‍💻");
+            $("#gametitle").text("Developing 👨‍💻");
           } else if (gameTitle === "Web Show") {
             $("#gametitle").text("Hosting a Web Show 📺");
           } else if (gameTitle === "Creative") {
@@ -256,14 +275,18 @@ $(document).ready(function() {
             .css({ background: "grey", color: "#fff" });
         }
         $("#widgetbutts").show();
-        $("#code").text('<iframe src="https://mixlook.ml?profile='+name+'&embed=show" frameborder="0" allowfullscreen></iframe>')
+        $("#code").text(
+          '<iframe src="https://mixlook.ml?profile=' +
+            name +
+            '&embed=show" frameborder="0" allowfullscreen></iframe>'
+        );
         $("#avatar").attr("src", avatarUrl);
         $("#favicon").attr("href", avatarUrl);
-        $("#viewb").attr("href", "/?profile="+name+"&embed=show");
-        $("#clipb").click(function(){
+        $("#viewb").attr("href", "/?profile=" + name + "&embed=show");
+        $("#clipb").click(function() {
           $("textarea").select();
-          document.execCommand('copy');
-          $("#clipb").text("Copied to clipboard!")
+          document.execCommand("copy");
+          $("#clipb").text("Copied to clipboard!");
         });
         $("#generated")
           .text(
@@ -275,6 +298,6 @@ $(document).ready(function() {
         $("#codetitle").html("Mixlook Widget for " + name);
         $("#alphanote").css({ display: "unset" });
       });
-     }, 500);
-    });
-  }
+    }, 500);
+  });
+}
