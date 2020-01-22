@@ -1,3 +1,5 @@
+> Development of Mixlook has been paused to make way for the new 2.0 version. Please do not be alarmed, you can still use Mixlook Legacy at [mixlook.ml](https://mixlook.ml)
+
 <img src="https://i.imgur.com/YToAhwK.png">
 
 [Try it here](https://mixlook.ml)
