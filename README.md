@@ -1,10 +1,8 @@
-> Development of Mixlook has been paused to make way for the new 2.0 version. Please do not be alarmed, you can still use Mixlook at [mixlook.ml](https://mixlook.ml) until the new version is stable enough for public testing. Thank you.
+> Development of Mixlook has been paused to make way for the new 2.0 version. Please do not be alarmed, you can still use the old version at [legacy.mixlook.ml](https://legacy.mixlook.ml) until the new version is stable enough for public testing. Thank you.
 
 > `mixlook-legacy` will no longer receive updates! Please go to the new [Mixlook](https://github.com/orangopus/mixlook) repo to create a PR.
 
-<img src="https://i.imgur.com/YToAhwK.png">
-
-[Try it here](https://mixlook.ml)
+[Try it here](https://legacy.mixlook.ml)
 
 ## Features
 
